@@ -1,0 +1,9 @@
+name: azure-key-vault
+type: terraform
+description: Module to provision key-vault on azure
+tags:
+  - tools
+  - devops
+versions: []
+cloudProvider: azure
+id: github.com/cloud-native-toolkit/terraform-azure-key-vault
