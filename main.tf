@@ -1,5 +1,5 @@
 locals {
-  key_vault_name = var.name == "" && var.name_prefix == "" ? "vault-${random_string.name.result}" : var.name_prefix != "" ? "${var.name_prefix}-vault" : var.name
+  key_vault_name = var.name == "" && var.name_prefix == "" ? "${random_string.name.result}-vault" : var.name_prefix != "" ? "${var.name_prefix}-vault" : var.name
 }
 
 resource "random_string" "name" {
