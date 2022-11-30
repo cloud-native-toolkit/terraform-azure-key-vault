@@ -6,6 +6,29 @@ tags:
   - devops
 versions:
   - platforms: []
-    dependencies: []
-    variables: []
+    providers:
+      - name: azurerm
+        source: "hashicorp/azurerm"
+    dependencies:
+      - id: resource_group
+        refs:
+          - source: github.com/cloud-native-toolkit/terraform-azure-resource-group
+            version: ">= 1.1.1"
+    variables:
+      - name: resource_group_name
+        moduleRef:
+          id: resource_group
+          output: name
+      - name: name_prefix
+        scope: global
+        optional: true
+    outputs:
+      - name: id
+        description: "Key vault Id"
+      - name: name
+        description: "Name of the key vault"
+      - name: vault_uri
+        description: "Key vault URI"
+      - name: location
+        description: "Region / location of the key vault"
 cloudProvider: azure
