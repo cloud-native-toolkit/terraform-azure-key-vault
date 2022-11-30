@@ -25,7 +25,7 @@ variable "provision" {
 
 variable "enabled_for_deployment" {
   type          = bool
-  description   = "FLag to enable key vault to be utilized for Azure Virtual Machines (default = false)"
+  description   = "Flag to enable key vault to be utilized for Azure Virtual Machines (default = false)"
   default       = false
 }
 
